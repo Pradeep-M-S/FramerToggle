@@ -6,7 +6,20 @@ export default function App() {
   let [mode, cycleMode] = useCycle("on", "off")
 
   return (
-    <div className="App">
+    <Frame
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        width: "100%"
+      }}
+      animate={mode}
+      variants={{
+        off: { background: "#EBFFFD" },
+        on: { background: "#00072f" }
+      }}
+    >
       <Frame
         width={120}
         height={60}
@@ -18,7 +31,7 @@ export default function App() {
         }}
         variants={{
           off: { background: "#999" },
-          on: { background: "#00072f" }
+          on: { background: "#grey" }
         }}
       >
         <Frame
@@ -35,6 +48,6 @@ export default function App() {
           }}
         />
       </Frame>
-    </div>
+    </Frame>
   )
 }
